@@ -1,0 +1,3 @@
+[webservers]
+nagios-doctor ansible_ssh_host={{nagios_host_ip}}
+nagios-patient ansible_ssh_host={{nagios_nrpe_ip}}
