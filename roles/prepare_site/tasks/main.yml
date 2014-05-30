@@ -32,7 +32,7 @@
 
 - name: Deploy {{full_app_name}} nginx config to sites-available
   sudo: yes
-  template: src={{full_app_name}}.nginx.j2 dest=/etc/nginx/sites-enabled/{{full_app_name}}
+  template: src=app_production.nginx.j2 dest=/etc/nginx/sites-enabled/{{full_app_name}}
   notify: restart_nginx
 
 - name: download elasticsearch

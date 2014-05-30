@@ -1,3 +1,0 @@
-- name: start elasticsearch
-  sudo: true
-  service: name=elasticsearch state=started

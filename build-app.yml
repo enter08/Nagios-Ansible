@@ -12,7 +12,7 @@
 - hosts: nagios-patient
   vars_files:
     - vars/defaults.yml
-    - vars/expman.yml
+    - vars/database.yml
     - vars/main.yml
   remote_user: "{{ deploy }}"
   roles:
@@ -28,4 +28,4 @@
     - { role: nginx-passenger, tags: ['nginx-passenger'] }
 
     # ### Site specific roles:
-    - { role: prepare_site_expman, tags: ['prepare_site_expman'] }
+    - { role: prepare_site, tags: ['prepare_site'] }
