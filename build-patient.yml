@@ -1,6 +1,7 @@
 - hosts: nagios-patient
   vars_files:
     - vars/main.yml
+    - vars/database.yml
   # user: intentionally blank
   remote_user: "{{ deploy }}"
   roles:
