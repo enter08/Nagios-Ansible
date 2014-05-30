@@ -20,7 +20,7 @@
 # - name: Install python-pycurl
 #   apt: pkg=python-pycurl state=latest update_cache=true
 
-# BUG: Is it secure to retrieve a PGP key over HTTP?
+# BUG: Is it secure to retrieve a PGP key over HTTP
 - name: Add PostgreSQL repo key
   apt_key: url=http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc
   sudo: yes

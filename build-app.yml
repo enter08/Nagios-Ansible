@@ -16,7 +16,7 @@
     - vars/main.yml
   remote_user: "{{ deploy }}"
   roles:
-    ### Server provisioning roles:
+    # Server provisioning roles:
    # - { role: ansible-nrpe}
     - { role: apache }
     - { role: linux-prereqs, tags: ['linux-prereqs'] }
@@ -27,5 +27,5 @@
     - { role: papertrail, tags: ['papertrail'] }
     - { role: nginx-passenger, tags: ['nginx-passenger'] }
 
-    ### Site specific roles:
+    # ### Site specific roles:
     - { role: prepare_site_expman, tags: ['prepare_site_expman'] }

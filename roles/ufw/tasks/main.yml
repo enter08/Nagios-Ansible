@@ -17,6 +17,12 @@
   notify: Restart ufw
   sudo: yes
 
+- name: Enable ufw
+  sudo: yes
+  action: "shell ufw --force enable"
+  notify: Restart nrpe
+
 - name: Add rules
   sudo: yes
-  command: "ufw allow from {{nagios_nrpe_ip}}"
+  action: "shell ufw allow from {{nagios_host_ip}}"
+  notify: Restart nrpe

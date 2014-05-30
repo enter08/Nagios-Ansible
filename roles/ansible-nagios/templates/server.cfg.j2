@@ -2,6 +2,7 @@ define host{
   use linux-server
   host_name server
   alias server
+  contact_groups admins
   address {{nagios_nrpe_ip}}
 }
 
@@ -15,6 +16,7 @@ define service{
   use generic-service
   host_name server
   service_description Current Users
+  contact_groups admins
   check_command check_remote_users
 }
 
@@ -22,6 +24,7 @@ define service{
   use generic-service
   host_name server
   service_description Postgresql
+  contact_groups admins
   check_command check_postgresql
 }
 
@@ -29,6 +32,7 @@ define service{
   use generic-service
   host_name server
   service_description ElasticSearch Cluster Health
+  contact_groups admins
   check_command check_elasticsearch_cluster_health
 }
 
@@ -36,6 +40,7 @@ define service{
   use generic-service
   host_name server
   service_description Nginx status
+  contact_groups admins
   check_command check_nginx_status
 }
 
@@ -43,6 +48,7 @@ define service{
   use                             generic-service
   host_name                       server
   service_description             SSH
+  contact_groups                  admins
   check_command                   check_ssh_nrpe
 }
 
@@ -50,6 +56,7 @@ define service{
         use                     generic-service
         host_name               server
         service_description     HTTP
+        contact_groups          admins
         check_command           check_http_nrpe
 }
 
@@ -57,6 +64,7 @@ define service{
         use                     generic-service
         host_name               server
         service_description     PING
+        contact_groups          admins
         check_command           check_ping_nrpe
 }
 
@@ -65,6 +73,7 @@ define service{
         use                     generic-service
         host_name               server
         service_description     Current load
+        contact_groups          admins
         check_command           check_load_nrpe
 }
 
@@ -72,6 +81,7 @@ define service{
         use                     generic-service
         host_name               server
         service_description     Local procs
+        contact_groups          admins
         check_command           check_procs_nrpe
 }
 
@@ -79,6 +89,7 @@ define service{
   use generic-service
   host_name server
   service_description Check postgres connection
+  contact_groups admins
   check_command check_pg_connection
 }
 
@@ -86,6 +97,7 @@ define service{
   use generic-service
   host_name server
   service_description Check postgres bloat
+  contact_groups admins
   check_command check_bloat
 }
 
@@ -93,6 +105,7 @@ define service{
   use generic-service
   host_name server
   service_description Check backends
+  contact_groups admins
   check_command check_backends
 }
 
@@ -100,6 +113,7 @@ define service{
   use generic-service
   host_name server
   service_description Check db size
+  contact_groups admins 
   check_command check_db_size
 }
 
@@ -107,5 +121,6 @@ define service{
   use generic-service
   host_name server
   service_description Check query time
+  contact_groups admins
   check_command check_query_time
 }
